@@ -1,5 +1,17 @@
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js")
+    .then(reg => {console.log("We found your service worker file!", reg);});
+    try {
+      
+    } catch (error) {
+      console.log(`service worker error ${err}`)  
+    }
+  });
+}
 let transactions = [];
 let myChart;
+
 
 fetch("/api/transaction")
   .then(response => {
@@ -134,16 +146,23 @@ function sendTransaction(isAdding) {
       amountEl.value = "";
     }
   })
-  .catch(err => {
+  .catch(error => {
     // fetch failed, so save in indexed db
-    saveRecord(transaction);
-
-    // clear form
-    nameEl.value = "";
-    amountEl.value = "";
+    if (error) {
+      console.log(error)
+      saveRecord(transaction);
+      clearInput();
+    }
+   
   });
 }
-
+// clearinput function to clear the input filed 
+function clearInput(){
+  let nameEl = document.querySelector("#t-name");
+  let amountEl = document.querySelector("#t-amount");
+  nameEl.value = "";
+amountEl.value = "";
+}
 document.querySelector("#add-btn").onclick = function() {
   sendTransaction(true);
 };
