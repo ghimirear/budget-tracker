@@ -19,4 +19,4 @@ clone the repo and run npm install on terminal.
 ![demo](./public/images/budget.PNG)
 
 # link to deployed app
-[app]()
+[app](https://young-depths-32897.herokuapp.com/)
