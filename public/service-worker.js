@@ -1,10 +1,16 @@
 const cacheName = 'v1';
 const runtime = 'runtime';
 const cacheAssets = [
-    '/',
-'index.html',
-'styles.css',
-'index.js',
+  "/",
+  "/index.html",
+  "/manifest.webmanifest",
+  "/styles.css",
+  "/indexDB.js",
+  "/index.js",
+  "/service-worker.js",
+  "/icons/icon-192x192.png",
+  "/icons/icon-512x512.png",
+  "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 ]
 // Installation
 self.addEventListener('install', (e)=>{
