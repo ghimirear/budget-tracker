@@ -56,7 +56,7 @@ function checkDatabase() {
         // if successful, open a transaction on your transactions (store/collection)
         const transaction = db.transaction(["transactions"], "readwrite");
 
-        // access your pending object store
+        // access your transactions object store
         const store = transaction.objectStore("transactions");
 
         // clear all items in your store
