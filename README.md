@@ -24,7 +24,7 @@ database.
 - mongodb atlas
 # Installation 
 clone the repo and run npm install on terminal.
-# link to deployed app
+# Deployment
 [app](https://young-depths-32897.herokuapp.com/)
 # Screenshots
 ![demo](./public/images/budget.PNG)
